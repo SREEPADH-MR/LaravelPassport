@@ -49,11 +49,11 @@ class UserController extends Controller
 
         if (Auth::attempt($credentials)) {
 
-            $request->session()->regenerate();
+            $token = $request->user()->createToken('login');
 
             return response()->json([
                 'message' => 'Login Successful',
-                'data' => [],
+                'data' => $token,
                 'error' => '',
             ]);
         }

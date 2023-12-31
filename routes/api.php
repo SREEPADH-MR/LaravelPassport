@@ -30,7 +30,7 @@ Route::group([
 
 Route::group([
     // 'prefix' => 'students',
-    'middleware' => ['auth'],
+    'middleware' => ['auth:api'],
     'namespace' => 'App\Http\Controllers',
     'controller' => 'UserController',
 ], function () {
